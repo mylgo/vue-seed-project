@@ -6,4 +6,4 @@
 localStorage.setItem('role', 'admin'); //在登录页存储用户等级
 </script>
 
-<style scoped></style>
+<style lang="scss" scoped></style>
