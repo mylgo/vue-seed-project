@@ -8,8 +8,12 @@ const auth = () => {
 
 const routes = [
   {
+    path: '/',
+    component: () => import('@/views/Home/index.vue'),
+  },
+  {
     path: '/login',
-    component: () => import('@/views/index.vue'),
+    component: () => import('@/views/Login/index.vue'),
   },
   {
     path: '/home',
@@ -34,6 +38,14 @@ const routes = [
       },
     ],
   },
+  {
+    path: '/pinia-demo',
+    component: () => import('@/views/PiniaDemo/index.vue'),
+  },
+  {
+    path: '/router-demo',
+    component: () => import('@/views/RouterDemo/index.vue'),
+  },
   // 404 页面（放在最后）
   {
     path: '/:pathMatch(.*)*',
@@ -41,9 +53,9 @@ const routes = [
   },
 ];
 
-// 动态路由：将 /home/manage 拆出来
+// 动态路由：将 /home/manage 拆出来，App.vue 中判断挂载动态路由
 export const manageRoute = {
   path: '/home/manage',
-  component: () => import('@/views/manage.vue'),
+  component: () => import('@/views/Home/Manage/index.vue'),
 };
 export default routes;
